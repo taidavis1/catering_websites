@@ -4,40 +4,54 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src = "{% static 'js/home.js' %}"></script>
+        <script type="text/javascript" src = "{% static 'js/home.js' %}"></script>
         <link href="{% static 'font/css/fontawesome.css' %}" rel="stylesheet">
         <link href="{% static 'font/css/brands.css' %}" rel="stylesheet">
         <link href="{% static 'font/css/solid.css' %}" rel="stylesheet">
         <link href="{% static 'css/home.css' %}" rel="stylesheet">
     </head>
-    <body class="bg-black">
-        <div class="flex bg-black text-white justify-between mx-auto items-center p-5 z-100 tracking-wider w-screen md:h-24 h-16">
-            <div class="block cursor-pointer md:ml-10">
-                <img class="w-14 md:w-20  rounded-full hover:opacity-75" src="{%static 'logo/logo.jpeg'%}" alt="logo">
+    <body class = "font-sans">
+        <section class="navigation relative">
+            <div class="fixed top-0 bg-black text-white flex justify-between mx-auto items-center p-5 z-100 tracking-wider w-screen md:h-24 h-16">
+                <div class="block cursor-pointer md:ml-10">
+                    <img class="w-14 md:w-20  rounded-full hover:opacity-75" src="{%static 'logo/logo.jpeg'%}" alt="logo">
+                </div>
+                <div class="invisible md:visible cursor-pointer uppercase">
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/">Home</a>
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/About">About</a>
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Gallery">Events</a>
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Contact">Contact</a>
+                    <a class="mr-3" href="https://www.instagram.com/taicuisine3_catering/" target="_blank" rel="noreferrer">
+                        <i style="font-size:30px;" class="fa-brands fa-instagram hover:text-rose-500"></i>                
+                    </a>
+                    <a class="mr-3 hover:text-sky-200" href="" target="_blank" rel="noreferrer">
+                        <i style="font-size:30px;" class="fa-brands fa-facebook "></i>
+                    </a>
+                </div>
+                <div onclick="showNav()" class ="md:hidden button cursor-pointer text-white">
+                    <i id="icon" class="fa-solid fa-bars-staggered fa-xl"></i> 
+                </div>
             </div>
-            <div class="invisible md:visible cursor-pointer uppercase">
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/">Home</a>
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/About">About</a>
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Gallery">Events</a>
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Contact">Contact</a>
-                <a class="mr-3" href="https://www.instagram.com/taicuisine3_catering/" target="_blank" rel="noreferrer">
-                    <i style="font-size:30px;" class="fa-brands fa-instagram hover:text-rose-500"></i>                
-                </a>
-                <a class="mr-3 hover:text-sky-200" href="" target="_blank" rel="noreferrer">
-                    <i style="font-size:30px;" class="fa-brands fa-facebook "></i>
-                </a>
+            <div id="nav" class="hidden1 md:hidden opacity-95 w-screen bg-black transition duration-ease-out fixed top-16 left-0 right-0 z-1 text-2xl h-screen mx-auto justify-center text-center text-white">
+                <div class= "flex flex-col relative top-1/4">
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/">Home</a>
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/About">About</a>
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Gallery">Events</a>
+                    <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Contact">Contact</a>
+                </div>
             </div>
-            <div onclick="showNav()" class ="md:hidden button cursor-pointer text-white">
-                <i id="icon" class="fa-solid fa-bars-staggered fa-xl"></i> 
+        </section>
+        <section id = "page1" class = "relative  w-full h-screen overflow-y-hidden">
+            <img class = "w-full h-full " src = "{% static "img/slider1.jpeg" %}">
+            <div class="absolute text-lg md:text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <button onclick = "down_bg()" class="font-mono font-bold tracking-normal hover:scale-125 transition ease-in-out delay-150 duration-200 rounded-lg items-center md:px-6 md:py-5 px-2 py-4 bg-black text-white">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <span>Let's Explore!</span>
+                </button>
             </div>
-        </div>
-        <div id="nav" class="hidden1 md:hidden opacity-95 w-screen bg-black transition duration-ease-out fixed top-16 left-0 right-0 z-1 text-2xl h-screen mx-auto justify-center text-center text-white">
-            <div class= "flex flex-col relative top-1/4">
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/">Home</a>
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/About">About</a>
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Gallery">Events</a>
-                <a class="mr-7 hover:scale-110   hover:text-blue-300 transition ease-in-out delay-150 duration-200" href="/Contact">Contact</a>
-            </div>
+        </section>
+        <div class= "hidden1 w-full h-screen overflow-hidden" id = "page2">
+            <img class = "w-full md:h-full h-5/6" src = "{% static "img/slider1.jpeg" %}">
         </div>
     </body>
 </html>
