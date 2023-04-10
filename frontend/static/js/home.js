@@ -3,6 +3,6 @@ function showNav(){
     document.getElementById("icon").classList.toggle("fa-xmark");
 }
 function down_bg(){
-    document.getElementById("page2").classList.remove("hidden1")
-    document.getElementById("page2").scrollIntoView({behavior: "smooth"});
+    document.getElementById("about").classList.remove("hidden1")
+    document.getElementById("about").scrollIntoView({behavior: "smooth"});
 }
